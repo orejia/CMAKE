@@ -2,5 +2,5 @@
 #include "hello.h"
 void HelloFunc()
 {
-	printf("Hello world\n");
+	printf("H123\n");
 }
