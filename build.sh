@@ -3,8 +3,11 @@
 set -x
 SOURCE_DIR=`pwd`
 BUILD_DIR=${BUILD_DIR:-build}
+INSTALL_DIR=${INSTALL_DIR:-${BUILD_DIR}-install}
 
 mkdir -p $BUILD_DIR \
   && cd $BUILD_DIR \
-	&& cmake $SOURCE_DIR \
+	&& cmake \
+	         -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR \
+	         $SOURCE_DIR \
 	&& make $*
